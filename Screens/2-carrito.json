@@ -1,0 +1,71 @@
+{
+    "usuario": "nombre_usuario",
+    "productos": [
+      {
+        "id": 4,
+        "nombre": "Sudadera",
+        "descripcion": "Sudadera con capucha y bolsillos",
+        "precio": 28.99,
+        "color": "Gris",
+        "talla": "XL",
+        "cantidad": 1,
+        "imagen": "https://img.freepik.com/foto-gratis/sudadera-capucha-gris-aislada_125540-738.jpg?w=2000"
+      },
+      {
+        "id": 5,
+        "nombre": "Falda",
+        "descripcion": "Falda plisada de cuero",
+        "precio": 39.99,
+        "color": "Negro",
+        "talla": "M",
+        "cantidad": 2,
+        "imagen": "https://ddp.com.pa/images/thumbs/0020723_falda-corta-negra_1024.jpeg"
+      },
+      {
+        "id": 6,
+        "nombre": "Chaqueta",
+        "descripcion": "Chaqueta acolchada con cierre",
+        "precio": 55.99,
+        "color": "Azul Marino",
+        "talla": "S",
+        "cantidad": 1,
+        "imagen": "https://marcapl.com/marca/img/articulos/288_CHPA.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Blusa",
+        "descripcion": "Blusa con estampado floral",
+        "precio": 24.99,
+        "color": "Blanco y Azul",
+        "talla": "L",
+        "cantidad": 3,
+        "imagen": "https://www.angoracr.com/wp-content/uploads/2022/03/Blusa-sin-mangas-con-abertura-de-ojo-y-estampado-floral.webp"
+      }
+    ],
+    "precios":[
+      {
+        "nombreS":"Subtotal:"
+      },
+      {
+        "subtotal":267.93
+      },
+      {
+        "nombreS":"Descuento:"
+      },
+      {
+        "descuento":20.00
+      },
+      {
+        "nombreS":"Envio:"
+      },
+      {
+        "envio":7.50},
+      {"nombreS":"Total:"
+    },
+      {
+        "total":255.43
+      }
+    ]
+  
+  }
+  
