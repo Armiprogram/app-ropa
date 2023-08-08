@@ -1,28 +1,97 @@
 import { View, Text, StyleSheet, Button, Image,ImageBackground} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function HomeScreen({navigation}) {
-  
+  const [numero1, setNumero1] = useState(0)
+const [numero2, setNumero2] = useState(0)
+const [respuesta, setRespuesta] = useState(0)
+function aumentar(){
+if(numero1<10){
+  setNumero1(numero1+1)
+}else{
+  console.log("Maximo número alcanzado")
+}
+}
+function disminuir(){
+if( numero1 > 0){
+  setNumero1(numero1-1)
+}
+}
+function suma(){
+  setRespuesta(numero1+numero2)
+}
+function reiniciar(){
+  setNumero1(0);
+  setNumero2(0);
+  setRespuesta(0)
+}
+function calcular(operacion){
+switch (operacion){
+  case "+":
+    setRespuesta(numero1+numero2)
+    break;
+    case "-":
+      setRespuesta(numero1-numero2)
+      break;
+      case "*":
+        setRespuesta(numero1*numero2)
+        break;
+        case "/":
+          if(numero2!==0){
+          setRespuesta(numero1/numero2)
+        }else{
+          console.log("No hay diferencia de cero")
+        }
+          break;
+}
+}
   return (
-    <ImageBackground style={styles.container} 
-    source={ {uri:"https://png.pngtree.com/thumb_back/fh260/background/20220817/pngtree-clouds-with-nice-natural-blue-sky-background-image_1441754.jpg"} }
-    >
-      <Image style={styles.imgg} source={ {uri:"https://wellman.com.ec/wp-content/uploads/2020/11/camiseta-negra.jpg"} }/>
-      <Text style={styles.txtC}>Camiseta negra 7$</Text>
-      <Image style={styles.imgg} source={ {uri:"https://m.media-amazon.com/images/I/41Qy9LpiUqL._SL500_.jpg"} }/>
-      <Text style={styles.txtC}>Camiseta Yankee 15$</Text>
-      <Image style={styles.imgg} source={ {uri:"https://soviet.cl/263875-large_default/jeans-slim-cropped-hombre-soviet.jpg"} }/>
-      <Text style={styles.txtC}>Jeans Slim 23$</Text>
-      <Image style={styles.imgg} source={ {uri:"https://www.venus.com.ec/pub/media/catalog/product/cache/f246a469ca072380ed3af8f211e66c99/a/n/antonello_cordon_zapatos_formales_de_hombre_color_cafe_grupal.jpg"} }/>
-      <Text style={styles.txtC}>Zapatos negros 48$</Text>
-     
-    </ImageBackground>
+    <View style={styles.container}>
+<Text>Ejercicio1</Text> 
+<Text>{numero1} </Text> 
+<View style={styles.fila}>
+<Button title='Disminuir'
+onPress={()=> disminuir()}
+/>
+<Button title='Aumentar'
+onPress={()=> aumentar()}
+/>
+</View>
+<View style={styles.fila}>
+<Button title='Disminuir'
+onPress={()=> setNumero2(numero2-1)}
+/>
+<Text>        {numero2} </Text> 
+<Button title='Aumentar'
+onPress={()=> setNumero2(numero2+1)}
+/>
+</View>
+<View
+style={{borderWidth:1,width:"90%", marginTop:10,marginBottom:10}}
+/>
+<Text>        {respuesta} </Text> 
+<Button title='Suma'color={"green"}
+onPress={()=> calcular("+")}
+/>
+<Button title='Resta'color={"green"}
+onPress={()=> calcular("-")}
+/>
+<Button title='Multiplicacion'color={"green"}
+onPress={()=> calcular("*")}
+/>
+<Button title='Divicion'color={"green"}
+onPress={()=> calcular("/")}
+/>
+<Button title='Reiniciar'color={"red"}
+onPress={()=> reiniciar()}
+/>
+    </View>
   )
 }
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#696cfc',
+      backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
 
@@ -36,5 +105,9 @@ const styles = StyleSheet.create({
       width:100,
       height:100
       
-       }
+       },
+       fila:{
+      flexDirection:"row",
+      marginBottom:10
+         }
   });
